@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Category:{{ category.name }}{% endblock %}
+
+{% block content %}
+<div class="card mb-4 wow fadeIn">
+
+    <!--Card content-->
+    <div class="card-body">
+      <p class="h3 my-4">Category: {{ category.name }}</p>
+    </div>
+
+</div>
+{% if posts %}
+{% for post in posts %}
+<div class="card mb-4 wow fadeIn">
+
+    <!--Card content-->
+    <div class="card-body">
+      <a href="{% url 'post' post.id %}"><p class="h3 my-4">{{ post.title }}</p></a>
+      <hr>
+      <p>{{ post.text|slice:"250" }}...</p>
+    </div>
+
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -27,7 +27,6 @@ class Post(models.Model):
 class Comment(models.Model):
     # id = models.IntegerField(primary_key=True)
     author = models.CharField(max_length=40)
-    email = models.EmailField()
     text = models.TextField()
     from_admin = models.BooleanField(default=False)
     reviewed = models.BooleanField(default=False)
